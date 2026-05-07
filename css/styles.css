@@ -1,0 +1,475 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+  overflow-x:hidden;
+
+  background: linear-gradient(
+    -45deg,
+    #8fd3ff,
+    #bfe9ff,
+    #6ec6ff,
+    #dff6ff
+  );
+
+  background-size:400% 400%;
+
+  animation:fondoAnimado 12s ease infinite;
+}
+
+/* =========================
+   FONDO ANIMADO
+========================= */
+
+@keyframes fondoAnimado{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
+}
+
+/* =========================
+   TARJETA PRINCIPAL
+========================= */
+
+.contenedor{
+  width:100%;
+  max-width:760px;
+
+  background:rgba(255,255,255,0.95);
+
+  backdrop-filter:blur(10px);
+
+  padding:40px;
+
+  border-radius:30px;
+
+  border:5px solid #7bc7f1;
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,0.2),
+  0 0 20px rgba(73,169,230,0.4);
+
+  position:relative;
+
+  overflow:hidden;
+
+  animation:entrada 1s ease;
+}
+
+/* Brillo superior */
+
+.contenedor::before{
+  content:"";
+
+  position:absolute;
+
+  width:250px;
+  height:250px;
+
+  background:rgba(255,255,255,0.4);
+
+  border-radius:50%;
+
+  top:-120px;
+  right:-100px;
+
+  filter:blur(10px);
+}
+
+/* =========================
+   ANIMACIÓN DE ENTRADA
+========================= */
+
+@keyframes entrada{
+
+  from{
+    transform:translateY(40px);
+    opacity:0;
+  }
+
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+
+}
+
+/* =========================
+   TITULOS
+========================= */
+
+h1{
+  text-align:center;
+
+  font-size:48px;
+
+  color:#0f5f99;
+
+  margin-bottom:10px;
+
+  text-transform:uppercase;
+
+  letter-spacing:3px;
+
+  animation:titulo 2s infinite alternate;
+}
+
+@keyframes titulo{
+
+  from{
+    transform:scale(1);
+  }
+
+  to{
+    transform:scale(1.03);
+  }
+
+}
+
+.subtitulo{
+  text-align:center;
+
+  color:#4e7188;
+
+  margin-bottom:35px;
+
+  font-size:18px;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo{
+  animation:aparecer 0.8s ease;
+}
+
+@keyframes aparecer{
+
+  from{
+    opacity:0;
+    transform:translateX(-20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+
+}
+
+label{
+  display:block;
+
+  margin-bottom:10px;
+
+  color:#154b70;
+
+  font-weight:bold;
+
+  font-size:17px;
+}
+
+input,
+select{
+  width:100%;
+
+  padding:16px;
+
+  border-radius:15px;
+
+  border:2px solid #8dd0f5;
+
+  background:#f3fbff;
+
+  outline:none;
+
+  font-size:16px;
+
+  transition:0.4s;
+}
+
+/* =========================
+   EFECTOS INPUTS
+========================= */
+
+input:hover,
+select:hover{
+  transform:translateY(-2px);
+}
+
+input:focus,
+select:focus{
+
+  border-color:#1b84d1;
+
+  background:white;
+
+  box-shadow:
+  0 0 15px rgba(27,132,209,0.4),
+  0 0 30px rgba(27,132,209,0.2);
+
+  transform:scale(1.02);
+}
+
+/* =========================
+   RANGE
+========================= */
+
+.range-box{
+
+  background:linear-gradient(
+    to right,
+    #e9f8ff,
+    #d4f0ff
+  );
+
+  padding:20px;
+
+  border-radius:20px;
+
+  border:2px dashed #6cbce9;
+
+  transition:0.4s;
+}
+
+.range-box:hover{
+  transform:scale(1.01);
+}
+
+input[type="range"]{
+  accent-color:#1f8ad6;
+
+  cursor:pointer;
+}
+
+.valor{
+
+  text-align:center;
+
+  margin-top:15px;
+
+  font-size:30px;
+
+  font-weight:bold;
+
+  color:#0f629d;
+
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.1);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+
+/* =========================
+   BOTON
+========================= */
+
+button{
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:linear-gradient(
+    to right,
+    #2f9be7,
+    #1575be
+  );
+
+  color:white;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.4s;
+
+  letter-spacing:1px;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* brillo botón */
+
+button::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:100px;
+  height:300%;
+
+  background:rgba(255,255,255,0.3);
+
+  top:-100px;
+  left:-120px;
+
+  transform:rotate(25deg);
+
+  transition:0.6s;
+}
+
+button:hover::before{
+  left:120%;
+}
+
+button:hover{
+
+  transform:translateY(-4px) scale(1.02);
+
+  box-shadow:
+  0 10px 20px rgba(0,0,0,0.2),
+  0 0 20px rgba(21,117,190,0.4);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+
+  width:100%;
+  height:100vh;
+
+  background:rgba(0,0,0,0.7);
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  display:none;
+
+  justify-content:center;
+  align-items:center;
+
+  backdrop-filter:blur(4px);
+
+  z-index:1000;
+}
+
+.modal-contenido{
+
+  width:90%;
+  max-width:520px;
+
+  background:white;
+
+  padding:35px;
+
+  border-radius:25px;
+
+  text-align:center;
+
+  animation:modalAnimada 0.5s ease;
+}
+
+@keyframes modalAnimada{
+
+  from{
+    transform:scale(0.5) rotate(-5deg);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1) rotate(0);
+    opacity:1;
+  }
+
+}
+
+.modal-contenido h2{
+
+  color:#1565a8;
+
+  margin-bottom:25px;
+
+  font-size:32px;
+}
+
+#resultado{
+
+  text-align:left;
+
+  line-height:2;
+
+  font-size:18px;
+
+  color:#35566e;
+
+  margin-bottom:25px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:700px){
+
+  .contenedor{
+    padding:25px;
+  }
+
+  h1{
+    font-size:34px;
+  }
+
+  button{
+    font-size:17px;
+  }
+
+}
