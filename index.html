@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encuesta de Salud</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="contenedor">
+
+    <h1>Encuesta de Salud</h1>
+
+    <p class="subtitulo">
+      Completa el formulario con tu información médica.
+    </p>
+
+    <form id="formulario">
+
+      <div class="campo">
+        <label>Nombre completo</label>
+        <input type="text" id="nombre" required>
+      </div>
+
+      <div class="campo">
+        <label>Edad</label>
+        <input type="number" id="edad" min="1" max="100" required>
+      </div>
+
+      <div class="campo">
+        <label>Peso (kg)</label>
+        <input type="number" id="peso" min="20" max="250" required>
+      </div>
+
+      <div class="campo">
+        <label>Altura (cm)</label>
+        <input type="number" id="altura" min="80" max="250" required>
+      </div>
+
+      <div class="campo">
+        <label>Tipo de sangre</label>
+
+        <select id="sangre" required>
+          <option value="">Selecciona</option>
+          <option>A+</option>
+          <option>A-</option>
+          <option>B+</option>
+          <option>B-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+          <option>O+</option>
+          <option>O-</option>
+        </select>
+      </div>
+
+      <div class="campo range-box">
+
+        <label>Nivel de dolor</label>
+
+        <input 
+          type="range"
+          min="0"
+          max="10"
+          value="5"
+          id="dolor"
+        >
+
+        <div class="valor" id="valorDolor">5</div>
+
+      </div>
+
+      <button type="submit">
+        Enviar Encuesta
+      </button>
+
+    </form>
+
+  </div>
+
+  <!-- VENTANA FLOTANTE -->
+
+  <div class="modal" id="modal">
+
+    <div class="modal-contenido">
+
+      <h2>Datos Registrados</h2>
+
+      <div id="resultado"></div>
+
+      <button onclick="cerrarModal()">
+        Cerrar
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
